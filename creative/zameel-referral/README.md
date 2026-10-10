@@ -8,7 +8,7 @@ The referral reel now lives alongside HeliosGen, with a native application workf
 2. The 6-second reference restores into local media storage. It is deliberately disconnected from the generator: presenter likeness and dialogue are not being regenerated.
 3. Review the prompt → video connection. It is configured for one 6-second portrait B-roll clip at 720p, with no dialogue or text. The generator starts idle.
 4. Configure your own Kie.ai key in the app's Settings. Check provider credit requirements before selecting **Generate** on that one node. Importing the workflow does not submit a generation.
-5. Download and inspect any generated clip before editing it into the reel. The shipped `review.mp4` contains the graphics redesign only; no generated B-roll is in it.
+5. Download and inspect any generated clip before editing it into the reel. The [downloadable review MP4](https://github.com/Haidara9/HeliosGen/releases/download/zameel-referral-review-2026-10-11/Zameel-referral-review.mp4) contains the graphics redesign only; no generated B-roll is in it.
 
 The manifest `workflow.json` is editable. To rebuild and verify the import package, run:
 
@@ -39,7 +39,7 @@ Edit `index.html` for layout/timing and `DESIGN.md` for the authored palette. `e
 
 The final video remains 1080×1920 at 60fps. Header motion is captured at 30fps. The original source already contains subtitles and flashes; this workspace replaces its upper graphics panel through 44.3s and preserves the rest of the footage and original audio. Prices and referral terms come from the source video and have not been checked against current product entitlements.
 
-`review.mp4` is the checked compact export (1080p60, CRF 28 capped at 1.6 Mbps, original AAC preserved). The render command produces the higher bitrate master. `.media/`, temporary renders, browser snapshots, application data, keys and local settings are excluded from Git.
+The [review MP4](https://github.com/Haidara9/HeliosGen/releases/download/zameel-referral-review-2026-10-11/Zameel-referral-review.mp4) is the checked compact export (1080p60, CRF 28 capped at 1.6 Mbps, original AAC preserved). The render command produces the higher bitrate master. `.media/`, temporary renders, browser snapshots, application data, keys and local settings are excluded from Git.
 
 ## Validation recorded on 11 October 2026
 
@@ -52,3 +52,5 @@ The final video remains 1080×1920 at 60fps. Header motion is captured at 30fps.
 ## Existing SVUAI credentials
 
 The owner authorized using an existing compatible project key without exposing it. The accessible private SVU AI Studio source references runtime Gemini configuration; its checkpoint identifies Cloud Run/Secret Manager as the credential location. No compatible Kie.ai or Google Gemini secret was available in this workspace or through the enabled secret-store access. No credential was copied, committed or sent to another provider. A Google Gemini key cannot be pasted into HeliosGen's Kie.ai setting.
+
+The MP4 is attached to the repository's creative review release rather than stored in Git. Download it from the link above; the native workflow ZIP and sources are versioned on this branch.

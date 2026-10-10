@@ -51,9 +51,11 @@
 ## إعادة الإنتاج داخل HeliosGen
 ملف `zameel-helios-workflow.zip` يستورد من **Workflows → Import**. يحوي مرجعًا أصليًا مدته 6 ثوانٍ وعقدة برومبت موصولة بمولّد Gemini Omni عبر Kie.ai، بحالة انتظار وطلب واحد فقط. مرجع المتحدث غير موصول بالتوليد. تم اختبار الاستيراد في واجهة التطبيق، وتشغيل المرجع وحفظ العقد في SQLite، دون طلب توليد.
 
-المونتاج الكامل في `review.mp4`، ومصادر الرسومات في `index.html` و`DESIGN.md`. ثبّت الاعتماديات عبر `npm ci --prefix creative/zameel-referral`، ثم من جذر الريبو شغّل `npm run video:zameel -- --source /absolute/path/original.mp4`. يحتاج Node 22+ وFFmpeg وChrome الخاص بـHyperframes. الأصل غير مرفوع في الريبو؛ بصمته في `source-contract.json` لتفادي تطبيق التوقيت على فيديو آخر.
+[تنزيل المونتاج الكامل](https://github.com/Haidara9/HeliosGen/releases/download/zameel-referral-review-2026-10-11/Zameel-referral-review.mp4)، ومصادر الرسومات في `index.html` و`DESIGN.md`. ثبّت الاعتماديات عبر `npm ci --prefix creative/zameel-referral`، ثم من جذر الريبو شغّل `npm run video:zameel -- --source /absolute/path/original.mp4`. يحتاج Node 22+ وFFmpeg وChrome الخاص بـHyperframes. الأصل غير مرفوع في الريبو؛ بصمته في `source-contract.json` لتفادي تطبيق التوقيت على فيديو آخر.
 
 ## التحقق
 نجح فحص Hyperframes للـruntime والحدود والتباين دون أخطاء. ظهرت 11 ملاحظة lint بنيوية غير مانعة تتعلق باقتراح نقل البطاقات إلى sub-compositions. تداخل المشاهد لمدة الانتقال مقصود ومصرّح به؛ تمت مراجعة لوحة من 8 إطارات. رندر الشريط اكتمل: 1329 إطارًا، 44.3 ثانية. هذه النسخة مراجعة تحريرية، ولم تُنشر على منصات التواصل.
 
 التحقق النهائي: ملف MP4 مدة 48.399 ثانية، 1080×1920 و60fps. فُك ترميز كامل الملف دون أخطاء. تطابقت SHA256 لحزم AAC بين الأصل والنسخة، ما يثبت الحفاظ على مسار الصوت المرمّز. تمت مراجعة لوحة إطارات النسخة النهائية.
+
+نسخة التنزيل المضغوطة: 10,987,168 بايت؛ 1080×1920 و60fps؛ فُك ترميزها كاملة وطابقت حزم AAC الأصل. نسخة الماستر الأعلى bitrate تنتج من سكربت الريبو.
