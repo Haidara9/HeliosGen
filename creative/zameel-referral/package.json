@@ -1,0 +1,14 @@
+{
+  "name": "zameel-referral-production",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "node run.mjs",
+    "check": "node run.mjs --check-only",
+    "workflow": "node build-workflow.mjs",
+    "verify-import": "node verify-import.mjs"
+  },
+  "devDependencies": {
+    "hyperframes": "0.8.145"
+  }
+}
