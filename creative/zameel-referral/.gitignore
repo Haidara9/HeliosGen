@@ -1,0 +1,7 @@
+node_modules/
+.media/
+renders/
+snapshots/
+.hyperframes/
+*.log
+review.mp4

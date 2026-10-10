@@ -1,0 +1,109 @@
+{
+  "format": "heliosgen-workflow",
+  "version": 1,
+  "name": "Zameel Referral — B-roll preparation",
+  "workflow": {
+    "name": "Zameel Referral — B-roll preparation",
+    "nodes": [
+      {
+        "id": "zameel-guide",
+        "type": "commentNode",
+        "position": {
+          "x": 0,
+          "y": -350
+        },
+        "style": {
+          "width": 500,
+          "height": 260
+        },
+        "data": {
+          "label": "طريقة العمل",
+          "comment": "شاهد مرجع زميل أولًا. عقدة التوليد مستقلة عنه وتنتج لقطة إضافية فقط. اختر Generate مرة واحدة بعد التحقق من مفتاح Kie.ai والرصيد. لا تشغّل الكل. نزّل اللقطة وراجعها قبل دمجها. العربية والشعار والصوت النهائي تبقى في Hyperframes وFFmpeg.",
+          "status": "idle"
+        }
+      },
+      {
+        "id": "zameel-reference",
+        "type": "videoInputNode",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "style": {
+          "width": 240,
+          "height": 480
+        },
+        "data": {
+          "label": "مرجع المونتاج — 6 ثوانٍ",
+          "videoUrl": "assets/reference-6s.mp4",
+          "videoAspectRatio": "9 / 16",
+          "status": "idle"
+        }
+      },
+      {
+        "id": "zameel-broll-prompt",
+        "type": "promptNode",
+        "position": {
+          "x": 350,
+          "y": 0
+        },
+        "style": {
+          "width": 450,
+          "height": 320
+        },
+        "data": {
+          "label": "لقطة إضافية — مشاركة الهاتف",
+          "prompt": "Create one continuous 6-second vertical shot for an academic app referral reel. Close-up of two adult university students sharing a smartphone at a study desk. Restrained navy and electric-blue lighting, natural hand movement, realistic skin, stable camera. The phone screen is plain dark navy for later compositing. No text, logos, spoken dialogue, or scene cuts.",
+          "status": "idle"
+        }
+      },
+      {
+        "id": "zameel-broll-generate",
+        "type": "videoGeneratorNode",
+        "position": {
+          "x": 930,
+          "y": 0
+        },
+        "style": {
+          "width": 320,
+          "height": 320
+        },
+        "data": {
+          "label": "Gemini Omni — لقطة واحدة",
+          "videoModel": "gemini-omni-video",
+          "duration": 6,
+          "aspectRatio": "9:16",
+          "grokResolution": "720p",
+          "sound": false,
+          "count": 1,
+          "status": "idle"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "zameel-prompt-to-video",
+        "source": "zameel-broll-prompt",
+        "target": "zameel-broll-generate",
+        "targetHandle": "prompt",
+        "animated": false,
+        "style": {
+          "stroke": "#2DD4BF",
+          "strokeWidth": 2
+        }
+      }
+    ],
+    "nodeCounters": {
+      "commentNode": 1,
+      "videoInputNode": 1,
+      "promptNode": 1,
+      "videoGeneratorNode": 1
+    },
+    "viewport": {
+      "x": 60,
+      "y": 230,
+      "zoom": 0.6
+    },
+    "createdAt": 1791670862000
+  }
+}
